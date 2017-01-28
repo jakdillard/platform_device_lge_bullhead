@@ -53,7 +53,8 @@ PRIVATE_BUILD_DESC="bullhead-user 7.1.1 N4F26I 3532671 release-keys"
 # Telephony packages
 PRODUCT_PACKAGES += \
     Stk \
-    CellBroadcastReceiver
+    CellBroadcastReceiver \
+    CarrierConfig
 
 # Additional Props
 
