@@ -64,5 +64,9 @@ ro.facelock.det_timeout=2500 \
 ro.facelock.rec_timeout=3500 \
 ro.facelock.est_max_time=600
 
+# Mobile Data provision prop
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.android.prov_mobiledata=false
+
 # Include Google Apps
 #$(call inherit-product-if-exists, vendor/google/gapps.mk)
