@@ -1,5 +1,6 @@
 #
 # Copyright 2015 The Android Open Source Project
+# Copyright 2017 Modified by Jakdillard
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -26,8 +27,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 PRODUCT_NAME := aosp_bullhead
 PRODUCT_DEVICE := bullhead
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on BullHead
+PRODUCT_BRAND := google
+PRODUCT_MODEL := Nexus 5X
 PRODUCT_MANUFACTURER := LGE
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
@@ -39,3 +40,22 @@ $(call inherit-product-if-exists, vendor/lge/bullhead/device-vendor.mk)
 PRODUCT_PACKAGES += \
     Launcher3
 
+# AOSP MODIFICATIONS
+# Include Clean configuration
+#$(call inherit-product-if-exists, vendor/clean/config/config.mk)
+
+# Device Fingerprint
+PRODUCT_BUILD_PROP_OVERRIDES += \
+PRODUCT_NAME=bullhead \
+BUILD_FINGERPRINT=google/bullhead/bullhead:7.1.1/N4F26I/3532671:user/release-keys \
+PRIVATE_BUILD_DESC="bullhead-user 7.1.1 N4F26I 3532671 release-keys"
+
+# Telephony packages
+PRODUCT_PACKAGES += \
+    Stk \
+    CellBroadcastReceiver
+
+# Additional Props
+
+# Include Google Apps
+#$(call inherit-product-if-exists, vendor/google/gapps.mk)
