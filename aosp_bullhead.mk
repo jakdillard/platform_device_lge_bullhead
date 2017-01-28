@@ -42,7 +42,7 @@ PRODUCT_PACKAGES += \
 
 # AOSP MODIFICATIONS
 # Include Clean configuration
-#$(call inherit-product-if-exists, vendor/clean/config/config.mk)
+$(call inherit-product-if-exists, vendor/jakdillard/config/config.mk)
 
 # Device Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
