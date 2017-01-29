@@ -478,6 +478,18 @@ $(call inherit-product, build/target/product/verity.mk)
 ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1
 
+# Additional Props
+# facelock properties
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.facelock.black_timeout=700 \
+ro.facelock.det_timeout=2500 \
+ro.facelock.rec_timeout=3500 \
+ro.facelock.est_max_time=600
+
+# Mobile Data provision prop
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.com.android.prov_mobiledata=false
+
 # In userdebug, add minidebug info the the boot image and the system server to support
 # diagnosing native crashes.
 ifneq (,$(filter userdebug, $(TARGET_BUILD_VARIANT)))
