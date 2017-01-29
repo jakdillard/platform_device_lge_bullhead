@@ -215,6 +215,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/lge/bullhead/gps.conf:system/etc/gps.conf
 
+# GPS
+PRODUCT_PACKAGES += \
+    libgps.utils \
+    gps.msm8992
+
 # NFC packages
 PRODUCT_PACKAGES += \
     nfc_nci.bullhead \
@@ -223,7 +228,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint Sensor
 PRODUCT_PACKAGES += \
-    fingerprint.bullhead
+    fingerprint.bullhead \
+    fingerprintd
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
